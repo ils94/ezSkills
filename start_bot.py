@@ -49,7 +49,7 @@ def start(char_name, button_start, var_target, var_f1, var_f2, var_def_bal):
 
                 element = element + 1
 
-                if element < 1:
+                if element > 1:
                     element = 0
 
             time.sleep(random.uniform(120, 180))
