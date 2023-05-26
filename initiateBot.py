@@ -1,10 +1,10 @@
-import foodEater
-import healSpell
-import changeTarget
+import useFood
+import useHeal
+import switchTarget
 import miscs
 
 
-def initiate(key1, key2, char_name):
-    miscs.multithreading(lambda: foodEater.eat(key1, char_name))
-    miscs.multithreading(lambda: healSpell.heal(key1, char_name))
-    miscs.multithreading(lambda: changeTarget.change_target(key1, key2, char_name))
+def initiate():
+    miscs.multithreading(lambda: foodEater.eat)
+    miscs.multithreading(lambda: healSpell.heal)
+    miscs.multithreading(lambda: changeTarget.change_target)

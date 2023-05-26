@@ -5,9 +5,9 @@ import virtualKeys
 import globalVariables
 
 
-def eat(key, char_name):
+def eat():
     while True:
         if globalVariables.eat_food_on:
-            windowsAPI.send_keystrokes(virtualKeys.vk_code.get(key), char_name)
+            windowsAPI.send_keystrokes(virtualKeys.vk_code.get(globalVariables.eat_food_key))
 
             time.sleep(random.randint(0, 500))
