@@ -35,8 +35,8 @@ var_target = IntVar()
 var_food = IntVar()
 var_health = IntVar()
 
-window_width = 295
-window_height = 75
+window_width = 300
+window_height = 130
 
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
