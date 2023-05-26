@@ -16,4 +16,4 @@ Nope. Unless you are running the Tibia Client as Administrator, because non Admi
 
 # Image of the tool
 
-![ezSkills](https://github.com/ils94/ezSkills/blob/master/image.PNG?raw=true)
+![ezSkills](https://i.imgur.com/AxDQHCJ.png)
