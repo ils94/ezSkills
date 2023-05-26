@@ -5,6 +5,7 @@ import miscs
 
 
 def initiate():
-    miscs.multithreading(lambda: foodEater.eat)
-    miscs.multithreading(lambda: healSpell.heal)
-    miscs.multithreading(lambda: changeTarget.change_target)
+
+    miscs.multithreading(lambda: useFood.eat())
+    miscs.multithreading(lambda: useHeal.heal())
+    miscs.multithreading(lambda: switchTarget.change_target())

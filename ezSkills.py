@@ -1,14 +1,15 @@
-from tkinter import Entry, Tk, X, LEFT, RIGHT, Checkbutton, IntVar, LabelFrame, Label, Button
+from tkinter import Entry, Tk, X, LEFT, RIGHT, Checkbutton, IntVar, LabelFrame, Label, Button, END
 import os
 import globalVariables
 import initiateBot
+import saveConfig
 
 
 def update_values():
     if var_target.get() == 1:
-        globalVariables.change_target_on = True
+        globalVariables.switch_target_on = True
     else:
-        globalVariables.change_target_on = False
+        globalVariables.switch_target_on = False
 
     if var_food.get() == 1:
         globalVariables.eat_food_on = True
@@ -21,9 +22,11 @@ def update_values():
         globalVariables.use_heal_on = False
 
     globalVariables.char_name = entry_char_name.get()
-    globalVariables.change_target_key = entry_switch_target_hotkey.get()
+    globalVariables.switch_target_key = entry_switch_target_hotkey.get()
     globalVariables.eat_food_key = entry_food_hotkey.get()
     globalVariables.use_heal_key = entry_health_hotkey.get()
+
+    saveConfig.save_key_configs()
 
 
 root = Tk()
@@ -42,7 +45,7 @@ x = (screen_width / 2) - (window_width / 2)
 y = (screen_height / 2) - (window_height / 2)
 
 root.geometry("300x130+" + str(int(x)) + "+" + str(int(y)))
-root.title("Pepe EZ")
+root.title("ezSkills")
 if os.path.isfile("icon/pepeez.ico"):
     root.iconbitmap("icon/pepeez.ico")
 root.resizable(False, False)
@@ -89,10 +92,15 @@ entry_health_hotkey.pack(side=LEFT)
 button_update_values = Button(root, text="Update Values", width=15, command=update_values)
 button_update_values.pack(side=RIGHT, padx=1, pady=1)
 
-if os.path.isfile("character.txt"):
-    f = open("character.txt", "r")
+open_json_config = saveConfig.open_json_config()
 
-    entry_char_name.insert(0, f.read())
+entry_char_name.insert(END, open_json_config[0])
+
+entry_switch_target_hotkey.insert(END, open_json_config[1])
+
+entry_food_hotkey.insert(END, open_json_config[2])
+
+entry_health_hotkey.insert(END, open_json_config[3])
 
 initiateBot.initiate()
 

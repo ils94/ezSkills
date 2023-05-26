@@ -1,8 +1,8 @@
 char_name = ""
 
-change_target_on = False
+switch_target_on = False
 
-change_target_key = ""
+switch_target_key = ""
 
 eat_food_on = False
 

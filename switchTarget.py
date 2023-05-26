@@ -7,7 +7,12 @@ import globalVariables
 
 def change_target():
     while True:
-        if globalVariables.change_target_on:
-            windowsAPI.send_keystrokes(virtualKeys.vk_code.get(globalVariables.change_target_key))
+        if globalVariables.switch_target_on and globalVariables.switch_target_on:
+
+            time.sleep(random.randint(0, 3))
+
+            windowsAPI.send_keystrokes(virtualKeys.vk_code.get(globalVariables.switch_target_on))
 
             time.sleep(random.randint(0, 180))
+
+        time.sleep(0.5)
