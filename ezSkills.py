@@ -35,7 +35,7 @@ var_target = IntVar()
 var_food = IntVar()
 var_health = IntVar()
 
-window_width = 300
+window_width = 336
 window_height = 130
 
 screen_width = root.winfo_screenwidth()
@@ -44,7 +44,7 @@ screen_height = root.winfo_screenheight()
 x = (screen_width / 2) - (window_width / 2)
 y = (screen_height / 2) - (window_height / 2)
 
-root.geometry("300x130+" + str(int(x)) + "+" + str(int(y)))
+root.geometry("336x130+" + str(int(x)) + "+" + str(int(y)))
 root.title("ezSkills")
 if os.path.isfile("icon/pepeez.ico"):
     root.iconbitmap("icon/pepeez.ico")
@@ -71,19 +71,19 @@ check_f2.pack(side=LEFT)
 frame_hotkeys = LabelFrame(root)
 frame_hotkeys.pack(fill=X, padx=1, pady=1)
 
-label_switch_target_hotkey = Label(frame_hotkeys, text="Target Key:", width=8)
+label_switch_target_hotkey = Label(frame_hotkeys, text="Target Key:", width=10)
 label_switch_target_hotkey.pack(side=LEFT)
 
 entry_switch_target_hotkey = Entry(frame_hotkeys, width=5)
 entry_switch_target_hotkey.pack(side=LEFT)
 
-label_food_hotkey = Label(frame_hotkeys, text="Food Key:", width=8)
+label_food_hotkey = Label(frame_hotkeys, text="Food Key:", width=10)
 label_food_hotkey.pack(side=LEFT)
 
 entry_food_hotkey = Entry(frame_hotkeys, width=5)
 entry_food_hotkey.pack(side=LEFT)
 
-label_health_hotkey = Label(frame_hotkeys, text="Health Key:", width=8)
+label_health_hotkey = Label(frame_hotkeys, text="Health Key:", width=10)
 label_health_hotkey.pack(side=LEFT)
 
 entry_health_hotkey = Entry(frame_hotkeys, width=5)
