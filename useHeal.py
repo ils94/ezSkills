@@ -10,7 +10,7 @@ def heal():
 
         if globalVariables.use_heal_on and globalVariables.use_heal_key:
 
-            time.sleep(random.randint(0, 3))
+            time.sleep(random.randint(0, 2))
 
             windowsAPI.send_keystrokes(virtualKeys.vk_code.get(globalVariables.use_heal_key))
 
