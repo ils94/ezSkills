@@ -14,6 +14,13 @@ def heal():
 
             windowsAPI.send_keystrokes(virtualKeys.vk_code.get(globalVariables.use_heal_key))
 
-            time.sleep(random.randint(240, 480))
+            tick = random.randint(240, 300)
+
+            while tick:
+                if globalVariables.eat_food_on:
+                    tick = tick - 1
+                    time.sleep(1)
+                else:
+                    break
 
         time.sleep(0.5)
